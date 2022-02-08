@@ -1,34 +1,29 @@
+body {
+  font-size: 16px;
+}
 h1 {
-    color: orange;
-    width: 65px;
-    font-family: sans-serif;
-    font-size: 3em;
-  }
-  body {
-    font-size: 16px;
-  }
-  p {
-    font-weight:600;
-    text-align:start;
-    text-decoration:wavy;
-  }
-  ul {
-    color: blue;
-    line-height: 25px;
-  }
-
-  .cor-fundo {
-    background-color: yellowgreen;
-  }
-  #amarelo{
-    background-color: yellow;
-    font-style: italic;
-  }
-  #vermelho {
-    background-color: red;
-    font-style: oblique;
-  }
-  #marrom {
-    background-color: brown;
-    font-style:initial;
-  }
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 65px;
+  color: orange;
+}
+ul {
+  background-color: rgba(238, 234, 4, 0.911);
+}
+p {
+  font-size: 3em;
+  font-weight: 600;
+}
+.corTema {
+  background-color: blanchedalmond;
+  line-height: normal;
+}
+#amarelo {
+  background-color: yellow;
+}
+#vermelho {
+  background-color: red;
+}
+#marrom {
+  background-color: brown;
+}
