@@ -111,3 +111,45 @@ switch(pecaXadrez.toLowerCase()){
 // Porcentagem >= 50 -> E
 // Porcentagem < 50 -> F
 // O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
+let nota = 45;
+if(nota < 0 || nota > 100){
+    console.log("ERRO");
+} else if(nota >= 90){
+    console.log("A");
+} else if(nota >= 80){
+    console.log("B");
+} else if(nota >= 70){
+    console.log("C");
+} else if(nota >= 60){
+    console.log("D");
+} else if(nota >= 50){
+    console.log("E");
+} else{
+    console.log("F");
+}
+//8 - Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+// Bonus: use somente um if .
+const a = 7;
+const b = 15;
+const c = 3;
+let temPar;
+if(a % 2 === 0 || b % 2 === 0 || c % 2 === 0){
+    temPar = true;
+    console.log(temPar);
+} else {
+    temPar = false;
+    console.log(temPar);
+}
+//9 - Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false .
+// Bonus: use somente um if .
+const a = 6;
+const b = 10;
+const c = 4;
+let temImpar;
+if(a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0){
+    temImpar = true;
+    console.log(temImpar);
+} else {
+    temImpar = false;
+    console.log(temImpar);
+}
