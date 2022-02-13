@@ -51,8 +51,83 @@ console.log(maiorNumero);
 
 //6 - Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-
+let numerosImpares = 0;
+for (let index = 0; index < numbers.length; index +=1){
+    if(numbers[index] % 2 !== 0){
+        numerosImpares +=1;
+}
+}
+if(numerosImpares === 0){
+    console.log("Nenhum valor ímpar encontrado");
+} else {
+console.log(numerosImpares);
+}
 
 //7 - Utilizando for , descubra qual o menor valor contido no array e imprima-o;
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let menorNum = numbers[0];
+for(let index = 0; index < numbers.length; index +=1){
+    if(menorNum < numbers[index]){
+        menorNum = menorNum;
+    } else {
+        menorNum = numbers[index]
+    }
+}
+console.log(menorNum);
+
+//##### MELHORAMENTO ABAIXO #######
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let menorNum = numbers[0];
+for (let index = 1; index < numbers.length; index += 1){
+    if (menorNum > numbers[index]){
+        menorNum = numbers[index];
+    }
+}
+console.log(menorNum);
+
+
 //8 - Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado;
+let numbers = [];
+for (let index = 1; index <= 25; index +=1){
+    numbers.push(index);
+}
+console.log(numbers);
+
+
 //9 - Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2 .
+let numbers = [];
+for (let index = 1; index <= 25; index +=1){
+    numbers.push(index);
+}
+console.log(numbers);
+let divDois = [];
+for(let index = 0; index < numbers.length; index += 1){
+    divDois.push(numbers[index]/2);
+}
+console.log(divDois);
+
+//##### MELHORAMENTO ABAIXO ########
+
+let numbers = [];
+for (let index = 1; index <= 25; index +=1){
+    numbers.push(index);
+}
+console.log(numbers);
+for (let index = 0; index < numbers.length; index += 1) {
+    console.log(numbers[index] / 2);
+  };
+
+  //EXERCÍCIO BÔNUS 1:
+  let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+for(index = 1; index < numbers.length; index += 1){
+    for(secondIndex = 0; secondIndex < index; secondIndex += 1){
+        if(number[secondIndex] < numbers[index]){
+            let position = numbers[index];
+            numbers[index] = numbers[secondIndex];
+            numbers[secondIndex] = position;
+        }
+    }
+}
+console.log(numbers)
