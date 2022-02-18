@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+//1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+// BODY é PARTE ESSENCIAL da página HTML, não sendo necessário criar variável para atribui-la 
+//     let corpoPagina = document.getElementsByTagName("body");  - LINHA DESNECESSÁRIA //cria variável para atribuir o elemento body do html
+
+let h1 = document.createElement("h1");              // cria a variável e atribui o elemento h1 também criado 
+h1.innerText = "Exercício 5.2 - JavaScript DOM";          // adiciona texto à tag h1
+document.body.appendChild(h1);                          // Adiciona o h1 ao Body da página
+
+//2 - Adicione a tag main com a classe main-content como filho da tag body ;
+
+let tagMain = document.createElement("main");           // cria a variável tagMain para ser atribuido o elemento criado(main)
+tagMain.className = "main-content";                      //Atribui a classe ao elemento recem criado
+document.body.appendChild(tagMain);                  // Adiciona a tagMain acomo filho da tag body do arquivo HTML
+
+//3 - Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+
+let section = document.createElement("section");               //Cria variável para receber o elemento "section"
+section.className = "center-content";                           //Atribui classe ao elemento "section" criada
+tagMain.appendChild(section);                                   // Adiciona a tag section criada como filha da main
+
+//4 - Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+
+let tagP = document.createElement("p");                     //cria variável tagP para armazenar o elemento "p"
+section.appendChild(tagP);                                  //Adiciona a tag p como filha da section criada anteriormente
+tagP.innerHTML = "EU vou me tornar<strong> o melhor</strong> desenvolvedor web que esse mundo já viu"; //Adiciona texto ao parágrafo
+
+//5 - Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+
+let sectionLeft = document.createElement("section");        //cria variável para se atribuir o segundo elemento section
+sectionLeft.className = "left-content";                      //atribui classe ao elemento criado
+tagMain.appendChild(sectionLeft);                           //Adiciona a section criada como filha da main
+
+//6 - Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+
+let sectionRight = document.createElement("section");           ///cria variável no qual vai ser atribuida a tag section criada
+sectionRight.className = "right-content";                   //atribui classe á tag section criada
+tagMain.appendChild(sectionRight);                          //atribui a section criada como filha da main
+
+//7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+
+let imagem = document.createElement("img");                 //cria variável no qual sera atribuída a tag "img" criada pelo comando createElement
+sectionLeft.appendChild(imagem);                        // Adiciona a tag img a section da pag html
+imagem.className = "small-image";                       //Atribui classe à imagem - tag "img"
+imagem.src = "https://picsum.photos/200";               // atribui o link do endereço da imagem "img"
+
+//8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+let listaDesordenada = document.createElement("ul");           //cria variável lista desordenada e elemento "ul" que é armazenado dentro da variável
+sectionRight.appendChild(listaDesordenada);                 //atribui a tag "ul" à section
+let numeros = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"]; // array com valores a serem adicionados aos itens da lista ordenada
+for (let index = 0; index < numeros.length; index += 1) {          //for para percorrer todos os elementos do array com os valores a serem adicionados a lista ordebada
+                                         //ATRIBUTOS DO FOR - O QUE ELE VAI FAZER A CADA LOOP:
+    let li = document.createElement("li");                      //cria a variável li para armazenar o elemento "li"criado em seguida
+    li.innerText = numeros[index];                              //O elemento li criado na linha de cima recebe como texto o valor dos elementos do array conforme posição do index
+    listaDesordenada.appendChild(li);                           //O elemento li criado é atribuido como filho da listaDesordenada "ul"
+}    
+
+//9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+
+for (let index = 0; index < 3; index += 1) {
+    let h3 = document.createElement("h3");
+    tagMain.appendChild(h3);    
+}
+
+// Agora que você criou muita coisa, vamos fazer algumas alterações e remoções:
+//1 - Adicione a classe title na tag h1 criada;
+
+h1.className = "title";
+//2 - Adicione a classe description nas 3 tags h3 criadas;
+
+
+for (let index = 0; index < document.getElementsByTagName('h3').length; index += 1) {
+  let h3 = document.getElementsByTagName('h3')[index];
+  h3.className = 'description';  
+}
+
+//3 - Remova a section criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
+
+tagMain.removeChild(sectionLeft);
+
+//4 - Centralize a section criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto da section ;
+
+sectionRight.style.marginRight = '105px';
+
+//5 - Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+
+section.parentElement.style.backgroundColor = 'green';
+
+//6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+
+listaDesordenada.lastChild.remove();
+listaDesordenada.lastChild.remove();
+
+    </script>
+  </body>
+</html>
