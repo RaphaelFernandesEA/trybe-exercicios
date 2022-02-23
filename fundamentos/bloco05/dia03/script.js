@@ -64,7 +64,7 @@ function createHolidayButton (buttonName) {
     let button = document.createElement('button');
     //atribui ao texto do nosso botao o parâmetro dado pela questão (nome do botao)
     button.innerText = buttonName;
-    //atribui id ao botao atraves da variavel criada para ele
+    //atribui id ao botao atraves da variavel criada para ele   
     button.id = 'btn-holiday';
     //cria variável para que possamos acessar a div no qual iremos inserir nosso botao
     let buttonContainer = document.querySelector('.buttons-container');
