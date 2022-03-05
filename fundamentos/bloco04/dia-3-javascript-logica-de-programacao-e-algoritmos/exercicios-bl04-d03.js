@@ -60,4 +60,69 @@ for (let num = 1; num <= 50; num += 1){
 }
 console.log(maiorPrimo);
 
+//EXERCÍCIOS BÔNUS 01:
+
+// 1- Agora vamos trabalhar com algumas formas geométricas! Faça um programa que, dado um valor n qualquer, seja n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n . Por exemplo:
+// n = 5
+
+// *****
+// *****
+// *****
+// *****
+// *****
+
+let n = 04;
+let linha = '';
+let symbol = '*'
+// let symbol = '*  '
+for (let index = 1; index <= n; index += 1) {
+  linha = linha + symbol;
+}
+for (let index = 1; index <= n; index += 1) {
+  console.log(linha);
+}
+
+//EXERCÍCIO BÔNUS 02:
+
+// 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. Por exemplo:
+
+// n = 5
+
+// *
+// **
+// ***
+// ****
+// *****
+
+let n = 05;
+let linha = '';
+let symbol = '*'
+for (let index = 1; index <= n; index += 1) {
+  linha = linha + symbol;
+  console.log(linha);
+}
+
+//EXERCÍCIO BÔNUS 03:
+
+// 3- Agora inverta o lado do triângulo. Por exemplo:
+
+// n = 5
+
+//     *
+//    **
+//   ***
+//  ****
+// *****
+
+// Atenção! Note que esse exercício é bem mais complexo que o anterior! Não basta, aqui, imprimir somente asteriscos. Você precisará de uma lógica para imprimir espaços também.
+
+
+
+
+
+
+
+
+
+
 
