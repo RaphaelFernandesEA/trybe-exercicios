@@ -7,7 +7,9 @@
 
 const a = 26;
 const b = 4;
+
 // Adição:
+
 let adicao = a + b;
 console.log(adicao);
 
@@ -32,17 +34,26 @@ let modulo = a % b;
 console.log(modulo);
 
 //2 - Faça um programa que retorne o maior de dois números. Defina no começo do programa duas constantes com os valores que serão comparados.
+
+
 const number1 = 27;
 const number2 = 42;
+
+//condicional if com primeiro teste lógico
 if(number1 > number2){
+  //com a confirmação do teste lógico a(s) linha(s) de baixo executa algo
     console.log(number1);
-}
-else if (number2 > number1){
+  //segunda condicional
+} else if (number2 > number1){
+  //com a confirmação da segunda condicinal, execução da(s) linha(s) de baixo
     console.log(number2);
+  //ultima opção, no caso de não ocorrer nenhum teste lógico, não tem teste lógico, abarcando tudo que não se enquadrou nos testes anteriores
 } else {
+  //execução de algo 
     console.log("Números iguais");
 }
 //3 - Faça um programa que retorne o maior de três números. Defina no começo do programa três constantes com os valores que serão comparados.
+
 const number1 = 27;
 const number2 = 25;
 const number3 = 12;
@@ -197,17 +208,44 @@ if(custoTotal >= 0 && valorVenda >= 0){
 // Resultado: R$ 2.612,55.
 // Dica: que tal identificar as alíquotas com variáveis de nomes explicativos?
 
-const salarioBruto = 6000;
+const salarioBruto = '';
 let inss;
-if(salarioBruto < 1556.94){
+let ir;
+function calcSalarioLiquido (salarioBruto) {
+  
+  //Condicional com testes lógicos para enquadramento das alíquotas do INSS
+
+  if (salarioBruto < 1556.94) {
     inss = salarioBruto * 0.08;
-} else if (salarioBruto <= 2594.92){
+  } else if (salarioBruto <= 2594.92) {
     inss = salarioBruto * 0.09;
-} else if (salarioBruto <= 5189.82){
+  } else if (salarioBruto <= 5189.82) {
     inss = salarioBruto * 0.11;
-} else {
+  } else {
     inss = 570.88
+  }
+
+  let salarioBaseIR = salarioBruto - inss;
+
+  if (salarioBaseIR <= 1903.98) {
+    ir = 0;
+  } else if (1903.99 <= salarioBaseIR <= 2826.65) {
+    ir = salarioBaseIR * 0.075 - 142.80;
+  } else if (2826.66 <= salarioBaseIR <= 3751.05) {
+    ir = salarioBaseIR * 0.15 - 354,80;
+  } else if (3751.06 <= salarioBaseIR <= 4664.68) {
+    ir = salarioBaseIR * 0.225 - 636.13;
+  } else {
+    ir = salarioBaseIR * 0.275 - 869.36;
+  }
+
+  let salarioLiquido = salarioBaseIR - ir;
+
+  // console.log(inss);
+  // console.log(salarioBaseIR);
+  // console.log(ir);
+  console.log(salarioLiquido);
+
 }
-console.log(inss);
 
-
+calcSalarioLiquido(3000);
