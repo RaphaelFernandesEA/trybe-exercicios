@@ -49,13 +49,17 @@ testingScope(true);
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-const orderOddsAndEvens = (oddsAndEvens) => oddsAndEvens.sort((a, b) => {
-  if (a > b) return 1;
-  if (a < b) return -1;
-  return 0;
-});
+// const orderOddsAndEvens = (oddsAndEvens) => oddsAndEvens.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+//   return 0;
+// });
  
 console.log(`Os números ${orderOddsAndEvens(oddsAndEvens)} se encontram ordenados de forma crescente!`); 
+
+//MELHORAMENTO 
+
+const orderOddsAndEvens = (oddsAndEvens) => oddsAndEvens.sort((a, b) => a - b);
 
 // REFERÊNCIAS PARA RESOLVER O EXERCÍCIO 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort

@@ -76,12 +76,13 @@ button.addEventListener('click', () => p.innerText = clickCount += 1);
 // String determinada: "Tryber x aqui!"
 // Parâmetro: "Bebeto"
 // Retorno: "Tryber Bebeto aqui!"
-let parametro = 'Bebeto';
-let string = 'Tryber x aqui!';
+
+// let parametro = 'Bebeto';
+// let string = 'Tryber x aqui!';
 const replaceWord = (parametro, string) => console.log(string.replace('x', parametro));
 
 // replaceWord(parametro,string);
-// replaceWord('Bebeto', 'Tryber x aqui!');
+replaceWord('Bebeto', 'Tryber x aqui!');
 
 //Fonte: https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
 
@@ -95,6 +96,6 @@ const array = ['HTML', 'CSS', 'JS', 'DOM', 'React'];
 // HTML; ... #goTrybe".
 
 const saudacao = (replaceWord, array) => console.log(`${replaceWord} Minhas cinco principais habilidade são: ${array.sort()}`);
-saudacao(replaceWord(parametro,string), array);
+saudacao(replaceWord('Bebeto', 'Tryber x aqui!'), array);
 
 
