@@ -43,21 +43,22 @@
     </main>
     <script>
 //        1. Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
+
 function mudarTexto () {
 let paragrafo = document.getElementsByTagName("p");
-paragrafo[1].innerText = "Vou ser um DEv foda"
+paragrafo[1].innerText = "Vou ser um DEV foda"
 }
 mudarTexto();
 //        2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
 function main () {
-let main = document.getElementsByClassName("main-content");
-main[0].style.background = "rgb(76,164,109)";
+let main = document.querySelector(".main-content");
+main.style.background = "rgb(76,164,109)";
 }
 main ();
 //        3. Crie uma função que mude a cor do quadrado vermelho para branco.
 function mudarCor(){
-  let central = document.getElementsByTagName("section");
-  central[0].style.background = "white";
+  let central = document.querySelector(".center-content");
+  central.style.background = "white";
 }
 mudarCor();
 //        4. Crie uma função que corrija o texto da tag <h1>.
