@@ -3,6 +3,7 @@ h1 {
 }
 
 main {
+  text-align: center;
   margin: 0 auto;
   width: 50%;
   background-color: gainsboro;
@@ -18,12 +19,16 @@ main {
   margin-bottom: 10px;
 }
 
+#resposta {
+  resize: none;
+}
 #date {
   resize: none;
   margin: 10px 0;
 }
 
 #buttons {
+  text-align: center;
   margin: 10px auto;
   width: 50%;
 
