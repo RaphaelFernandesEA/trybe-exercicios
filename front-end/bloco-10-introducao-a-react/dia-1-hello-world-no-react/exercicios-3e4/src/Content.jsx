@@ -24,22 +24,22 @@ const conteudos = [
   ];
 
 class Content extends React.Component{
-    render(){
-        return (
-            <ul>
-                {conteudos.map((conteudo) => {
-                    return (
-                    <div>
-                        <li>{`O conteúdo é: ${conteudo.conteudo}`}</li>
-                        <p>{`Status: ${conteudo.status}`}</p>
-                        <p>{`Bloco: ${conteudo.bloco}`}</p>
-                        </div>
-                        )
-                })
-                }
-            </ul>
-        )
-    }
+  render(){
+    return (
+        <ul>
+          {conteudos.map((conteudo) => {
+              return (
+              <>
+                  <li>{`O conteúdo é: ${conteudo.conteudo}`}</li>
+                  <p>{`Status: ${conteudo.status}`}</p>
+                  <p>{`Bloco: ${conteudo.bloco}`}</p>
+              </>
+              )
+            })
+          }
+        </ul>
+    )
+  }
 }
 
 export default Content
