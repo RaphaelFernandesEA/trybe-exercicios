@@ -11,9 +11,7 @@ const compromissos = ['Solar System Project', 'Project Tryunfo', 'Project TrybeT
 function App() {
   return (
     <div className="App">
-      <ul>
-        {compromissos.map((tarefa) => Task(tarefa))}
-      </ul>
+      <ul>{compromissos.map((tarefa) => Task(tarefa))}</ul>
     </div>
   );
 }
