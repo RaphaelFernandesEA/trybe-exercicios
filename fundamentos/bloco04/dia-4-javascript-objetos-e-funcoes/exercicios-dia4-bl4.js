@@ -180,3 +180,25 @@ console.log(soma(5));
 // Retorno esperado: true
 // verificaFimPalavra('joaofernando', 'fernan') ;
 // Retorno esperado: false
+let word = 'trybe';
+let ending = 'Be';
+
+function verifyEnd() {
+  let endQnt = ending.split('').length
+  let revWordSplit = word.toLowerCase().split('').reverse()
+  let revWordElements = ''
+  for (let index = 0; index < endQnt; index += 1) {
+    revWordElements += revWordSplit[index];
+  }
+  let elements = revWordElements.split('').reverse()
+
+  for (let index = 0; index < endQnt; index += 1) {
+    if(ending.toLowerCase().split('')[index] === elements[index]) {
+      return console.log(true)
+    } else {
+      return console.log(false)
+    }
+  }
+}
+
+verifyEnd()
