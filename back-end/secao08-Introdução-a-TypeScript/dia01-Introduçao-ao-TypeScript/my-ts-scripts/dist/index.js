@@ -23,5 +23,35 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Exercise = __importStar(require("./length"));
-console.log(Exercise.convertLength(5862.65, 'cm', 'km'));
+var readlineSync = require('readline-sync');
+const Area = __importStar(require("./area"));
+const Capacity = __importStar(require("./capacity"));
+const Length = __importStar(require("./length"));
+const Mass = __importStar(require("./mass"));
+const Volume = __importStar(require("./volume"));
+function chooseUnitToConvert() {
+    const unitToConvert = readlineSync.question(`Que tipo de conversão você quer fazer?
+  (area, capacidade, comprimentp, massa ou volume)`);
+    switch (unitToConvert) {
+        case 'area':
+            Area.exec();
+            break;
+        case 'capacidade':
+            Capacity.exec();
+            break;
+        case 'comprimento':
+            Length.exec();
+            break;
+        case 'massa':
+            Mass.exec();
+            break;
+        case 'volume':
+            Volume.exec();
+            break;
+        default:
+            console.log(`Desculpe ${unitToConvert} não é um tipo de conversão conhecido.`);
+    }
+    ;
+}
+;
+chooseUnitToConvert();

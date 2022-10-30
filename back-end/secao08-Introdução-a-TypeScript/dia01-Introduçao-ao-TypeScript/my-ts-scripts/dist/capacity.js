@@ -1,24 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.exec = exports.convertLength = void 0;
+exports.exec = exports.convertCapacity = void 0;
 var readlineSync = require('readline-sync');
-const lengthUnits = ["km", "hm", "dam", "m", "dm", "cm", "mm"];
-function convertLength(value, fisrtUnit, convertedUnit) {
-    const fisrtIndex = lengthUnits.indexOf(fisrtUnit);
-    const toConvertIndex = lengthUnits.indexOf(convertedUnit);
+const capacityUnits = ['kl', 'dl', 'dal', 'l', 'dl', 'cl', 'ml'];
+function convertCapacity(value, fisrtUnit, convertedUnit) {
+    const fisrtIndex = capacityUnits.indexOf(fisrtUnit);
+    const toConvertIndex = capacityUnits.indexOf(convertedUnit);
     const exponent = (toConvertIndex - fisrtIndex);
     const result = value * Math.pow(10, exponent);
     return `${value} ${fisrtUnit}s é igual a ${result} ${convertedUnit}s.`;
 }
-exports.convertLength = convertLength;
+exports.convertCapacity = convertCapacity;
 ;
 function exec() {
     const value = readlineSync.question('Converter quanto?');
     const fisrtUnit = readlineSync.question(` De que unidade?
-    Unidades aceitas: (${lengthUnits})`);
+    Unidades aceitas: (${capacityUnits})`);
     const toConvertUnit = readlineSync.question(`Para qual unidade? 
-    Unidades aceitas: (${lengthUnits})?`);
-    console.log(convertLength(value, fisrtUnit, toConvertUnit));
+    Unidades aceitas: (${capacityUnits})?`);
+    console.log(convertCapacity(value, fisrtUnit, toConvertUnit));
 }
 exports.exec = exec;
 ;
