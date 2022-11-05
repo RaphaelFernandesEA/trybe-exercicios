@@ -1,4 +1,4 @@
-# Bloco 2 - Git, GitHub e Internet
+# Seção 2 - Git, GitHub e Internet
 
 Nesse bloco foram abordados os seguintes pontos:
 - O que é o Git ?
