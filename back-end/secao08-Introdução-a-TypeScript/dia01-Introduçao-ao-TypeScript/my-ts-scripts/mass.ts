@@ -1,3 +1,5 @@
+var readlineSync = require('readline-sync');
+
 const massUnits: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
 
 function convert(value: number, baseUnit: string, toConvertUnit: string): string {
@@ -8,6 +10,14 @@ function convert(value: number, baseUnit: string, toConvertUnit: string): string
   const result = value * Math.pow(10, exponent);
 
   return (`${value} ${baseUnit} é igual a ${result} ${toConvertUnit}`)
-}
+};
 
-console.log(convert(260, 'kg', 'g'));
+export function exec():void {
+  const value = readlineSync.question('Converter quanto?');
+  const fisrtUnit = readlineSync.question(` De que unidade?
+    Unidades aceitas: (${massUnits})`);
+  const toConvertUnit = readlineSync.question(`Para qual unidade? 
+    Unidades aceitas: (${massUnits})?`);
+
+  console.log(convert(value, fisrtUnit, toConvertUnit));
+};
