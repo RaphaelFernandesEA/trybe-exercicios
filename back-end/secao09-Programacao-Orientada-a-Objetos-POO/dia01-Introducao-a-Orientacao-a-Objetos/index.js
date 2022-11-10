@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+var costumer_1 = require("./costumer");
+var item_1 = require("./item");
+var order_1 = require("./order");
+var fritas = new item_1["default"]('Batata frita', 20);
+var acai = new item_1["default"]('Açaí', 15);
+var coxinha = new item_1["default"]('Coxinha', 5);
+var raphael = new costumer_1["default"]('Raphael');
+var pedido1 = new order_1["default"](raphael, [fritas, acai, coxinha], order_1.Payment.PIX, order_1.Discount.TRINTA);
+var pedido2 = new order_1["default"](raphael, [fritas], order_1.Payment.CREDITO);
+var pedido3 = new order_1["default"](raphael, [coxinha], order_1.Payment.DEBITO, order_1.Discount.DEZ);
+pedido1.orderWithDiscount();
+pedido2.orderWithDiscount();
+pedido3.orderWithDiscount();
