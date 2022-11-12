@@ -70,12 +70,19 @@ export default class Data {
   }
 
   compare(date: Data) {
-    
+    const currentDate = new Date(this._year, this._month, this._day)
+    const dateToCompare = new Date(date._year, date._month, date._day);
+    if (currentDate > dateToCompare) return 1;
+    if (currentDate < dateToCompare) return -1;
+
+    return 0;
   }
 }
 
 const date = new Data(22,12,1995);
+const date2 = new Data(22,12,1994)
 
 console.log(date);
 console.log(date.getMonthName());
 console.log(date.isLeapYear());
+console.log(date.compare(date2));

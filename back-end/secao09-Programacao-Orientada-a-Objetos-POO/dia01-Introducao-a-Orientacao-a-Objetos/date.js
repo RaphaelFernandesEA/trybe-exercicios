@@ -70,10 +70,21 @@ var Data = /** @class */ (function () {
         }
         return false;
     };
+    Data.prototype.compare = function (dateToCompare) {
+        var date = new Date(this._year, this._month, this._day);
+        var toCompare = new Date(dateToCompare._year, dateToCompare._month, dateToCompare._day);
+        if (date > toCompare)
+            return 1;
+        if (date < toCompare)
+            return -1;
+        return 0;
+    };
     return Data;
 }());
 exports["default"] = Data;
 var date = new Data(22, 12, 1995);
+var date2 = new Data(22, 12, 1994);
 console.log(date);
 console.log(date.getMonthName());
 console.log(date.isLeapYear());
+console.log(date.compare(date2));
