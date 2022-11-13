@@ -1,43 +1,64 @@
-export default class Student {
-  private _registration: number;
-  private _name: string;
-  private _test1: number
-  private _test2: number;
-  private _test3: number;
-  private _test4: number;
-  private _homework1: number;
-  private _homework2: number;
+import Person from "./person";
 
-  constructor(
-    registration: number,
-    name: string,
-    test1: number,
-    test2: number,
-    test3: number,
-    test4: number,
-    homework1: number,
-    homework2: number
-    ) {
-      this._registration = registration;
-      this._name = name;
-      this._test1 = test1;
-      this._test2 = test2;
-      this._test3 = test3;
-      this._test4 = test4;
-      this._homework1 = homework1;
-      this._homework2 = homework2;
+export default class Student extends Person {
+  private _registration: string;
+  private _tests: number[] = []
+  private _homeworks: number[] = [];
+
+  constructor(name: string, birthDate: Date) {
+      super(name, birthDate);
+      this.validateRegistration();
   };
 
-  get name() {
-    return this._name;
-  }
+  get tests() {
+    return this._tests;
+  };
 
-  sumGrade(): number {
-    const sum = this._test1 + this._test2 + this._test3 + this._test4 + this._homework1 + this._homework2;
+  set tests(tests: number[]) {
+    if (tests.length > 4) {
+      throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
+    }
+    this._tests = tests;
+  };
+
+  get homeworks() {
+    return this._homeworks;
+  };
+
+  set homeworks(homeworks: number[]) {
+    if (homeworks.length > 2) {
+      throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
+    }
+    this._homeworks = homeworks;
+  };
+
+  createRegistrationNumber():number {
+    const registrationNumber = this.birthDate.getTime() * Math.floor(Math.random() * 100) * Math.floor(Math.random() * 1000) 
+
+    return registrationNumber;
+  };
+
+  validateRegistration() {
+    const registrationNumber = this.createRegistrationNumber();
+
+    if(registrationNumber.toString().length < 16) {
+      this.validateRegistration()
+    };
+
+    this._registration = registrationNumber.toString();
+  };
+
+  sumGrades() {
+    let sum = 0;
+    this._tests.forEach((grade) => sum += grade);
+    this._homeworks.forEach((grade) => sum += grade)
     return sum;
   };
 
-  averageGrade(): number {
-    return this.sumGrade() / 6;
-  };
+  sumAverageGrade() {
+    const tests = this._tests.length;
+    const homeworks = this._homeworks.length;
+    return this.sumGrades()/(tests + homeworks);
+  }
+
 };
