@@ -70,12 +70,12 @@ var Data = /** @class */ (function () {
         }
         return false;
     };
-    Data.prototype.compare = function (dateToCompare) {
-        var date = new Date(this._year, this._month, this._day);
-        var toCompare = new Date(dateToCompare._year, dateToCompare._month, dateToCompare._day);
-        if (date > toCompare)
+    Data.prototype.compare = function (date) {
+        var currentDate = new Date(this._year, this._month, this._day);
+        var dateToCompare = new Date(date._year, date._month, date._day);
+        if (currentDate > dateToCompare)
             return 1;
-        if (date < toCompare)
+        if (currentDate < dateToCompare)
             return -1;
         return 0;
     };
