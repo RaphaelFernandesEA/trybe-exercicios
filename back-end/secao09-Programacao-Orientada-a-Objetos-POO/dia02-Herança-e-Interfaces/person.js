@@ -1,11 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Person = /** @class */ (function () {
-    function Person(_name, _birthDate) {
-        this._name = _name;
-        this._birthDate = _birthDate;
-        this.name = _name;
-        this.birthDate = _birthDate;
+    function Person(name, birthDate) {
+        this._name = name;
+        this.validateBirthDate(birthDate);
     }
     ;
     Object.defineProperty(Person.prototype, "name", {
@@ -26,26 +24,22 @@ var Person = /** @class */ (function () {
         get: function () {
             return this._birthDate;
         },
-        set: function (birthDate) {
-            if (birthDate > new Date()) {
-                throw new Error('Impossível registrar uma previsão de nascimento');
-            }
-            var convertTime = 1000 / 3600 / 24 / 365;
-            if ((new Date().getTime() - birthDate.getTime()) / convertTime > 120) {
-                throw new Error('Impossível você ser tão velho assim!!!');
-            }
-            this._birthDate = birthDate;
-        },
         enumerable: false,
         configurable: true
     });
+    Person.prototype.validateBirthDate = function (birthDate) {
+        if (birthDate > new Date()) {
+            throw new Error('Impossível registrar uma pessoa não nascida');
+        }
+        ;
+        var currentDate = (((new Date().getTime() / 1000) / 3600) / 24) / 365;
+        var birthdayDate = (((birthDate.getTime() / 1000) / 3600) / 24) / 365;
+        if (currentDate - birthdayDate > 120) {
+            throw new Error('Impossível você ser tão velho assim!!!');
+        }
+        this._birthDate = birthDate;
+    };
     return Person;
 }());
-exports.default = Person;
+exports["default"] = Person;
 ;
-var raphael = new Person('Raphael', new Date(1990, 1, 8));
-// const person = new Person('João', new Date(2006, 11, 8));
-// person.name = 'jo';
-console.log(raphael);
-// console.log(person);
-// console.log(new Date())
