@@ -1,3 +1,4 @@
+import Evaluation, { EvaluationType } from "./evaluation";
 import Person from "./person";
 import Student from "./student";
 import Subject from "./subject";
@@ -5,7 +6,7 @@ import Teacher from "./teacher";
 
 const raphael = new Student('Raphael', new Date(1990, 1, 8))
 const person = new Student('João', new Date(2000, 11, 8));
-console.log(raphael, person);
+// console.log(raphael, person);
 // person.name = 'jo';
 
 
@@ -28,6 +29,12 @@ const dirceu = new Teacher('Dirceu', new Date(1939, 9,22),4.500, math);
 dirceu.admissionDate = new Date(1988, 1, 3)
 const maestri = new Teacher('Tenente Maestri', new Date(1968, 4, 19), 9.350, history);
 const frango = new Teacher('Professor Frango Borra Botas', new Date(1985, 7, 30), 3000, filosofy)
-console.log(dirceu);
-console.log(maestri);
-console.log(frango)
+// console.log(dirceu);
+// console.log(maestri);
+// console.log(frango)
+
+
+const avaliacao = new Evaluation(10, maestri, EvaluationType.TEST);
+// console.log(avaliacao);
+const avalicao1 = new Evaluation(5, dirceu, EvaluationType.HOMEWORK);
+avalicao1.score = -3;
