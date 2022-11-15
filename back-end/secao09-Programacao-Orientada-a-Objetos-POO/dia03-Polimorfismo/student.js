@@ -15,46 +15,39 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var evaluation_1 = require("./evaluation");
 var person_1 = require("./person");
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
     function Student(name, birthDate) {
         var _this = _super.call(this, name, birthDate) || this;
-        _this._tests = [];
-        _this._homeworks = [];
+        _this._evaluationsResults = [];
         _this.validateRegistration();
+        _this.valiadeteEvaluations(_this._evaluationsResults);
         return _this;
     }
     ;
-    Object.defineProperty(Student.prototype, "tests", {
+    Object.defineProperty(Student.prototype, "evaluationsResults", {
         get: function () {
-            return this._tests;
-        },
-        set: function (tests) {
-            if (tests.length > 4) {
-                throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
-            }
-            this._tests = tests;
+            return this._evaluationsResults;
         },
         enumerable: false,
         configurable: true
     });
     ;
-    ;
-    Object.defineProperty(Student.prototype, "homeworks", {
-        get: function () {
-            return this._homeworks;
-        },
-        set: function (homeworks) {
-            if (homeworks.length > 2) {
-                throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
-            }
-            this._homeworks = homeworks;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ;
+    Student.prototype.valiadeteEvaluations = function (_evaluationsResults) {
+        var tests = this._evaluationsResults.filter(function (test) { return test.evaluation.type === evaluation_1.EvaluationType.TEST; });
+        var homeworks = this._evaluationsResults.filter(function (homework) { return homework.evaluation.type === evaluation_1.EvaluationType.HOMEWORK; });
+        if (tests.length >= 4) {
+            throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
+        }
+        ;
+        if (homeworks.length > 2) {
+            throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
+        }
+        ;
+        this._evaluationsResults = _evaluationsResults;
+    };
     ;
     Student.prototype.generateRegistration = function () {
         var registrationNumber = this.birthDate.getTime() * Math.floor(Math.random() * 100) * Math.floor(Math.random() * 1000);
@@ -70,17 +63,9 @@ var Student = /** @class */ (function (_super) {
         this.registration = registrationNumber;
     };
     ;
-    Student.prototype.sumGrades = function () {
-        var sum = 0;
-        this._tests.forEach(function (grade) { return sum += grade; });
-        this._homeworks.forEach(function (grade) { return sum += grade; });
-        return sum;
-    };
-    ;
-    Student.prototype.sumAverageGrade = function () {
-        var tests = this._tests.length;
-        var homeworks = this._homeworks.length;
-        return this.sumGrades() / (tests + homeworks);
+    Student.prototype.addEvaluationResult = function (evaluationResult) {
+        this.valiadeteEvaluations(this._evaluationsResults);
+        this._evaluationsResults.push(evaluationResult);
     };
     return Student;
 }(person_1.default));

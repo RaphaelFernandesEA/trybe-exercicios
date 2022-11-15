@@ -1,36 +1,34 @@
 import Registration from "./enrollable";
+import { EvaluationType } from "./evaluation";
+import EvaluationResult from "./evaluationResult";
 import Person from "./person";
 
 export default class Student extends Person implements Registration {
   public registration: string;
-  private _tests: number[] = []
-  private _homeworks: number[] = [];
+  private _evaluationsResults: EvaluationResult[] = [];
 
   constructor(name: string, birthDate: Date) {
       super(name, birthDate);
       this.validateRegistration();
+      this.valiadeteEvaluations(this._evaluationsResults)
   };
 
-  get tests() {
-    return this._tests;
+  get evaluationsResults() {
+    return this._evaluationsResults;
   };
 
-  set tests(tests: number[]) {
-    if (tests.length > 4) {
+  valiadeteEvaluations(_evaluationsResults) {
+    const tests = this._evaluationsResults.filter((test) => test.evaluation.type === EvaluationType.TEST);
+    const homeworks = this._evaluationsResults.filter((homework) => homework.evaluation.type === EvaluationType.HOMEWORK)
+
+    if (tests.length >= 4) {
       throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
-    }
-    this._tests = tests;
-  };
+    };
 
-  get homeworks() {
-    return this._homeworks;
-  };
-
-  set homeworks(homeworks: number[]) {
-    if (homeworks.length > 2) {
+    if (homeworks.length >= 2) {
       throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
-    }
-    this._homeworks = homeworks;
+    };
+    this._evaluationsResults = _evaluationsResults;
   };
 
   generateRegistration(): string{
@@ -49,17 +47,22 @@ export default class Student extends Person implements Registration {
     this.registration = registrationNumber;
   };
 
-  sumGrades(): number {
-    let sum = 0;
-    this._tests.forEach((grade) => sum += grade);
-    this._homeworks.forEach((grade) => sum += grade)
-    return sum;
-  };
-
-  sumAverageGrade(): number {
-    const tests = this._tests.length;
-    const homeworks = this._homeworks.length;
-    return this.sumGrades()/(tests + homeworks);
+  addEvaluationResult(evaluationResult:  EvaluationResult ) {
+    this.valiadeteEvaluations(this._evaluationsResults);
+    this._evaluationsResults.push(evaluationResult);
   }
+
+  // sumGrades(): number {
+  //   let sum = 0;
+  //   this._tests.forEach((grade) => sum += grade);
+  //   this._homeworks.forEach((grade) => sum += grade)
+  //   return sum;
+  // };
+
+  // sumAverageGrade(): number {
+  //   const tests = this._tests.length;
+  //   const homeworks = this._homeworks.length;
+  //   return this.sumGrades()/(tests + homeworks);
+  // }
 
 };
