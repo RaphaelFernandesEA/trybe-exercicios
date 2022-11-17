@@ -5,15 +5,14 @@ export enum EvaluationType {
     HOMEWORK = "homework"
 }
 
-export default class Evaluation {
-    private _score: number;
-    private _teacher: Teacher;
-    private _type: EvaluationType;
+export default abstract class Evaluation {
+    protected _score: number;
+    protected _teacher: Teacher;
+    // private _type: EvaluationType;
 
-    constructor(score: number, teacher: Teacher, type: EvaluationType) {
+    constructor(score: number, teacher: Teacher) {
         this._teacher = teacher;
-        this._type = type;
-        this.validateScore(score);
+        this._score = score;
     };
 
     get score() {
@@ -31,27 +30,18 @@ export default class Evaluation {
     set teacher(teacher: Teacher) {
         this._teacher = teacher;
     };
+    
+    abstract validateScore(score: number): void;
+        // if(score < 0) {
+        //     throw new Error("A pontuação não pode ser negativa");
+        // };
 
-    get type () {
-        return this._type;
-    };
+        // if(this._type === EvaluationType.TEST && score > 25) {
+        //     throw new Error("As provas não podem valer mais que 25 pontos");
+        // };
 
-    set type(type: EvaluationType) {
-        this._type = type;
-    }
-
-    validateScore(score: number) {
-        if(score < 0) {
-            throw new Error("A pontuação não pode ser negativa");
-        };
-
-        if(this._type === EvaluationType.TEST && score > 25) {
-            throw new Error("As provas não podem valer mais que 25 pontos");
-        };
-
-        if(this._type === EvaluationType.HOMEWORK && score > 50) {
-            throw new Error("Os trabalhos não podem valer mais que 50 pontos");
-        };
-        this._score = score;
-    }
+        // if(this._type === EvaluationType.HOMEWORK && score > 50) {
+        //     throw new Error("Os trabalhos não podem valer mais que 50 pontos");
+        // };
+   
 }

@@ -1,19 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.filosofy = exports.history = exports.math = void 0;
-var evaluation_1 = require("./evaluation");
+var evaluationResult_1 = require("./evaluationResult");
+var exam_1 = require("./exam");
 var student_1 = require("./student");
 var subject_1 = require("./subject");
 var teacher_1 = require("./teacher");
 var raphael = new student_1.default('Raphael', new Date(1990, 1, 8));
-var person = new student_1.default('João', new Date(2000, 11, 8));
+var joao = new student_1.default('João', new Date(2000, 11, 8));
 // console.log(raphael, person);
 // person.name = 'jo';
-var testsGrades = [6, 9, 8, 7];
-var homeworksGrades = [8, 6];
 var student = new student_1.default('Estudante', new Date(1990, 2, 3));
-student.tests = testsGrades;
-student.homeworks = homeworksGrades;
+// student.tests = testsGrades;
+// student.homeworks = homeworksGrades;
 // console.log(student.sumGrades());
 // console.log(student.sumAverageGrade());
 exports.math = new subject_1.default('Matemática');
@@ -27,7 +26,9 @@ var frango = new teacher_1.default('Professor Frango Borra Botas', new Date(1985
 // console.log(dirceu);
 // console.log(maestri);
 // console.log(frango)
-var avaliacao = new evaluation_1.default(10, maestri, evaluation_1.EvaluationType.TEST);
-// console.log(avaliacao);
-var avalicao1 = new evaluation_1.default(5, dirceu, evaluation_1.EvaluationType.HOMEWORK);
-avalicao1.score = -3;
+var historyExam1 = new exam_1.default(10, maestri);
+console.log(historyExam1);
+console.log(historyExam1.score);
+// const historyExam2 = new Exam(-1, maestri);
+var historyExam1Result = new evaluationResult_1.default(historyExam1, 9);
+// console.log(historyExam1Result);

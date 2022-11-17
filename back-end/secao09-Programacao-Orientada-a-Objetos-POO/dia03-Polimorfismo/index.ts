@@ -1,20 +1,19 @@
 import Evaluation, { EvaluationType } from "./evaluation";
+import EvaluationResult from "./evaluationResult";
+import Exam from "./exam";
 import Person from "./person";
 import Student from "./student";
 import Subject from "./subject";
 import Teacher from "./teacher";
 
 const raphael = new Student('Raphael', new Date(1990, 1, 8))
-const person = new Student('João', new Date(2000, 11, 8));
+const joao = new Student('João', new Date(2000, 11, 8));
 // console.log(raphael, person);
 // person.name = 'jo';
 
-
-const testsGrades = [6, 9, 8, 7]
-const homeworksGrades = [8, 6]
 const student = new Student('Estudante', new Date(1990, 2, 3));
-student.tests = testsGrades;
-student.homeworks = homeworksGrades;
+// student.tests = testsGrades;
+// student.homeworks = homeworksGrades;
 // console.log(student.sumGrades());
 // console.log(student.sumAverageGrade());
 
@@ -33,8 +32,10 @@ const frango = new Teacher('Professor Frango Borra Botas', new Date(1985, 7, 30)
 // console.log(maestri);
 // console.log(frango)
 
+const historyExam1 = new Exam(10, maestri);
+console.log(historyExam1);
+console.log(historyExam1.score)
+// const historyExam2 = new Exam(-1, maestri);
 
-const avaliacao = new Evaluation(10, maestri, EvaluationType.TEST);
-// console.log(avaliacao);
-const avalicao1 = new Evaluation(5, dirceu, EvaluationType.HOMEWORK);
-avalicao1.score = -3;
+const historyExam1Result = new EvaluationResult(historyExam1, 9);
+// console.log(historyExam1Result);
