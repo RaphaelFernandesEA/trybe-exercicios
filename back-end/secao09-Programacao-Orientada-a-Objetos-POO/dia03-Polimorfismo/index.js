@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.filosofy = exports.history = exports.math = void 0;
-var evaluation_1 = require("./evaluation");
 var evaluationResult_1 = require("./evaluationResult");
+var exam_1 = require("./exam");
 var student_1 = require("./student");
 var subject_1 = require("./subject");
 var teacher_1 = require("./teacher");
@@ -26,26 +26,9 @@ var frango = new teacher_1.default('Professor Frango Borra Botas', new Date(1985
 // console.log(dirceu);
 // console.log(maestri);
 // console.log(frango)
-var historyTest1 = new evaluation_1.default(10, maestri, evaluation_1.EvaluationType.TEST);
-var historyTest2 = new evaluation_1.default(10, maestri, evaluation_1.EvaluationType.TEST);
-var historyTest3 = new evaluation_1.default(10, maestri, evaluation_1.EvaluationType.TEST);
-var historyTest4 = new evaluation_1.default(10, maestri, evaluation_1.EvaluationType.TEST);
-var historyTest5 = new evaluation_1.default(10, maestri, evaluation_1.EvaluationType.TEST);
-// console.log(avaliacao);
-var mathHomework1 = new evaluation_1.default(5, dirceu, evaluation_1.EvaluationType.HOMEWORK);
-// avalicao1.score = -3;
-var raphaelHistory1 = new evaluationResult_1.default(historyTest1, 10);
-var raphaelHistory2 = new evaluationResult_1.default(historyTest1, 10);
-var raphaelHistory3 = new evaluationResult_1.default(historyTest1, 10);
-var raphaelHistory4 = new evaluationResult_1.default(historyTest1, 10);
-var raphaelHistory5 = new evaluationResult_1.default(historyTest1, 10);
-var raphaelHistory6 = new evaluationResult_1.default(historyTest1, 10);
-var raphaelMathHomeworkResult = new evaluationResult_1.default(mathHomework1, 3);
-var raphaelHistoryTetsResults = [raphaelHistory1, raphaelHistory2, raphaelHistory3, raphaelHistory4, raphaelMathHomeworkResult];
-raphael.addEvaluationResult(raphaelHistory1);
-raphael.addEvaluationResult(raphaelHistory2);
-raphael.addEvaluationResult(raphaelHistory3);
-raphael.addEvaluationResult(raphaelHistory4);
-raphael.addEvaluationResult(raphaelHistory5);
-// raphael.addEvaluationResult(raphaelHistory6)
-console.log(raphael);
+var historyExam1 = new exam_1.default(10, maestri);
+console.log(historyExam1);
+console.log(historyExam1.score);
+// const historyExam2 = new Exam(-1, maestri);
+var historyExam1Result = new evaluationResult_1.default(historyExam1, 9);
+// console.log(historyExam1Result);

@@ -1,6 +1,7 @@
 import Registration from "./enrollable";
 import { EvaluationType } from "./evaluation";
 import EvaluationResult from "./evaluationResult";
+import Exam from "./exam";
 import Person from "./person";
 
 export default class Student extends Person implements Registration {
@@ -18,16 +19,16 @@ export default class Student extends Person implements Registration {
   };
 
   valiadeteEvaluations(_evaluationsResults) {
-    const tests = this._evaluationsResults.filter((test) => test.evaluation.type === EvaluationType.TEST);
-    const homeworks = this._evaluationsResults.filter((homework) => homework.evaluation.type === EvaluationType.HOMEWORK)
+    const tests = this._evaluationsResults.filter((test) => test.evaluation === Exam);
+    // const homeworks = this._evaluationsResults.filter((homework) => homework.evaluation.type === EvaluationType.HOMEWORK)
 
     if (tests.length >= 4) {
       throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
     };
 
-    if (homeworks.length >= 2) {
-      throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
-    };
+    // if (homeworks.length >= 2) {
+    //   throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
+    // };
     this._evaluationsResults = _evaluationsResults;
   };
 

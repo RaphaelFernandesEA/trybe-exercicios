@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var evaluation_1 = require("./evaluation");
+var exam_1 = require("./exam");
 var person_1 = require("./person");
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
@@ -36,16 +36,15 @@ var Student = /** @class */ (function (_super) {
     });
     ;
     Student.prototype.valiadeteEvaluations = function (_evaluationsResults) {
-        var tests = this._evaluationsResults.filter(function (test) { return test.evaluation.type === evaluation_1.EvaluationType.TEST; });
-        var homeworks = this._evaluationsResults.filter(function (homework) { return homework.evaluation.type === evaluation_1.EvaluationType.HOMEWORK; });
+        var tests = this._evaluationsResults.filter(function (test) { return test.evaluation === exam_1.default; });
+        // const homeworks = this._evaluationsResults.filter((homework) => homework.evaluation.type === EvaluationType.HOMEWORK)
         if (tests.length >= 4) {
             throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
         }
         ;
-        if (homeworks.length > 2) {
-            throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
-        }
-        ;
+        // if (homeworks.length >= 2) {
+        //   throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
+        // };
         this._evaluationsResults = _evaluationsResults;
     };
     ;

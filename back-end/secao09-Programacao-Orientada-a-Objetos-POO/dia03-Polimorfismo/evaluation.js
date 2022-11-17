@@ -7,10 +7,9 @@ var EvaluationType;
     EvaluationType["HOMEWORK"] = "homework";
 })(EvaluationType = exports.EvaluationType || (exports.EvaluationType = {}));
 var Evaluation = /** @class */ (function () {
-    function Evaluation(score, teacher, type) {
+    function Evaluation(score, teacher) {
         this._teacher = teacher;
-        this._type = type;
-        this.validateScore(score);
+        this._score = score;
     }
     ;
     Object.defineProperty(Evaluation.prototype, "score", {
@@ -37,32 +36,6 @@ var Evaluation = /** @class */ (function () {
     });
     ;
     ;
-    Object.defineProperty(Evaluation.prototype, "type", {
-        get: function () {
-            return this._type;
-        },
-        set: function (type) {
-            this._type = type;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ;
-    Evaluation.prototype.validateScore = function (score) {
-        if (score < 0) {
-            throw new Error("A pontuação não pode ser negativa");
-        }
-        ;
-        if (this._type === EvaluationType.TEST && score > 25) {
-            throw new Error("As provas não podem valer mais que 25 pontos");
-        }
-        ;
-        if (this._type === EvaluationType.HOMEWORK && score > 50) {
-            throw new Error("Os trabalhos não podem valer mais que 50 pontos");
-        }
-        ;
-        this._score = score;
-    };
     return Evaluation;
 }());
 exports.default = Evaluation;

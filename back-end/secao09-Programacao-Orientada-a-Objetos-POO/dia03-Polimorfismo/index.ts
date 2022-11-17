@@ -1,5 +1,6 @@
 import Evaluation, { EvaluationType } from "./evaluation";
 import EvaluationResult from "./evaluationResult";
+import Exam from "./exam";
 import Person from "./person";
 import Student from "./student";
 import Subject from "./subject";
@@ -31,35 +32,10 @@ const frango = new Teacher('Professor Frango Borra Botas', new Date(1985, 7, 30)
 // console.log(maestri);
 // console.log(frango)
 
+const historyExam1 = new Exam(10, maestri);
+console.log(historyExam1);
+console.log(historyExam1.score)
+// const historyExam2 = new Exam(-1, maestri);
 
-const historyTest1 = new Evaluation(10, maestri, EvaluationType.TEST);
-const historyTest2 = new Evaluation(10, maestri, EvaluationType.TEST);
-const historyTest3 = new Evaluation(10, maestri, EvaluationType.TEST);
-const historyTest4 = new Evaluation(10, maestri, EvaluationType.TEST);
-const historyTest5 = new Evaluation(10, maestri, EvaluationType.TEST);
-
-// console.log(avaliacao);
-const mathHomework1 = new Evaluation(5, dirceu, EvaluationType.HOMEWORK);
-// avalicao1.score = -3;
-
-const raphaelHistory1 = new EvaluationResult(historyTest1, 10);
-const raphaelHistory2 = new EvaluationResult(historyTest1, 10);
-const raphaelHistory3 = new EvaluationResult(historyTest1, 10);
-const raphaelHistory4 = new EvaluationResult(historyTest1, 10);
-const raphaelHistory5 = new EvaluationResult(historyTest1, 10);
-const raphaelHistory6 = new EvaluationResult(historyTest1, 10);
-
-
-const raphaelMathHomeworkResult = new EvaluationResult(mathHomework1, 3);
-
-const raphaelHistoryTetsResults = [raphaelHistory1, raphaelHistory2, raphaelHistory3, raphaelHistory4, raphaelMathHomeworkResult];
-
-raphael.addEvaluationResult(raphaelHistory1)
-raphael.addEvaluationResult(raphaelHistory2)
-raphael.addEvaluationResult(raphaelHistory3)
-raphael.addEvaluationResult(raphaelHistory4)
-raphael.addEvaluationResult(raphaelHistory5)
-// raphael.addEvaluationResult(raphaelHistory6)
-
-
-console.log(raphael)
+const historyExam1Result = new EvaluationResult(historyExam1, 9);
+// console.log(historyExam1Result);
