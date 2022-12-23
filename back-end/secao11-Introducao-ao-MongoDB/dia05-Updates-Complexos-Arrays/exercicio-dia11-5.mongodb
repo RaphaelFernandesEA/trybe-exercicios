@@ -124,11 +124,32 @@ db.movies.find({ title: "Home Alone" });
 
 // 🚀 Exercício 10: Crie um array de documentos chamado cast para o filme Batman com os seguintes dados:
 
-use("cinema");
-db.movies.update();
+          // {
+          //   "character": "Batman"
+          // },
+          // {
+          //   "character": "Alfred"
+          // },
+          // {
+          //   "character": "Coringa"
+          // }
 
 use("cinema");
-db.movies.find();
+db.movies.updateOne(
+  { title: "Batman" },
+  { $push: {
+    cast: {
+      $each: [
+        { "character": "Batman" },
+        { "character": "Alfred" },
+        { "character": "Coringa" }
+      ]
+    }
+  }}
+);
+
+use("cinema");
+db.movies.find({ title: "Batman" });
 
 // Exercício 11: Produza três querys para o filme Batman:
 
