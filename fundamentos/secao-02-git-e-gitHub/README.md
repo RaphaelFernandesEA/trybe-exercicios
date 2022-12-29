@@ -3,11 +3,11 @@
 Nesse bloco foram abordados os seguintes pontos:
 - O que é o Git ?
 - Qual a principal diferença para os outros VCS's ?
-- Como configurar o Git na sua máquina?
-- Como iniciar um repositório local?
+- Como configurar o Git na máquina.
+- Como iniciar um repositório local.
 - O que é o GitHub ?
-- Como subir seu repositório local para o GitHub ?
-- O que é Branch , Merge , Commit ?
+- Como subir seu repositório local para o GitHub.
+- O que é Branch , Merge , Commit.
 ## Foram realizados os seguintes exercícios:
 - Navegue até a raiz do projeto com o arquivo .txt criado na aula anterior.
 - Verifique se não existe nada sem "commitar" utilizando git status :
@@ -16,10 +16,10 @@ Nesse bloco foram abordados os seguintes pontos:
 - No arquivo .txt , ao final da lista de habilidades , adicione mais duas habilidades que serão desenvolvidas na Trybe:
 - Faça um git add nome-do-arquivo.extensao ;
       
-  - Você pode adicionar todos os arquivos que você modificou usando:  
+  - Adicionar todos os arquivos modificados usando:  
         
           git add .
-  - mas evite isso em commits com muitos arquivos para não adicionar nenhuma alteração por engano;
+  - Evite isso em commits com muitos arquivos para não adicionar nenhuma alteração por engano;
 - Agora um:
 
       git commit -m "Mensagem que você gostaria" ;
@@ -27,7 +27,7 @@ Nesse bloco foram abordados os seguintes pontos:
     - Uma boa prática é sempre resumir o que o seu commit está alterando, por exemplo, git commit -m "Adiciona nova skill" ;
     - Evite juntar muitas modificações em um único commit. Assim, caso haja algum erro no código, ficará mais fácil visualizar em qual alteração ele surgiu;
 
-- E por último um: 
+- E por último: 
       
       git push -u origin trybe-skills-changes ;
 - Abra um Pull Request com uma descrição detalhada:
