@@ -1,6 +1,6 @@
 # Dia 02: HTML & CSS - Primeiros passos em CSS
 
-No segundo dia dessa seção tivemos vários conteúdos interativos, por meio dos quais seguimos a teoria e fizemos exercícios ao mesmo tempo e com o aprendizado fomos capazes de:
+No segundo dia dessa seção tivemos vários conteúdos interativos, por meio dos quais seguimos a teoria e fizemos exercícios ao mesmo tempo; e com o aprendizado fomos capazes de:
 
 - Criar regras de estilo para tags HTML utilizando o CSS;
 - Utilizar os seletores de tag, id e class para aplicar regras de CSS;
