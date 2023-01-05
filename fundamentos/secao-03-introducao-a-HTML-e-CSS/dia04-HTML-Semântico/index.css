@@ -1,0 +1,13 @@
+h1, h2 { 
+  text-align: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline;
+  margin: 50px;
+}
+
+p span {
+  font-style: italic;
+}
