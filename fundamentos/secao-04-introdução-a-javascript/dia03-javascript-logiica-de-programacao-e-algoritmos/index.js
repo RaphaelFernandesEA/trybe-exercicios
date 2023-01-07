@@ -60,7 +60,7 @@ for (let num = 1; num <= 50; num += 1){
 }
 console.log(maiorPrimo);
 
-// Exercícios - bônus
+// Exercícios - BÔNUS
 
 
 // Agora vamos trabalhar com algumas formas geométricas! Utilize a estrutura de repetição for para escrever os programas abaixo:
