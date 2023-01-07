@@ -220,6 +220,7 @@ console.log(`Essa é a área do circulo ${circleArea(5)}`);
 
 // De olho na dica 👀: Nesse exercício, será necessário utilizar os conhecimentos sobre array, método split e loop for/of.
 
+// Bônus (opcional): Tente fazer o mesmo exercício utilizando o método array.sort().
 const phrase = 'Antônio foi no banheiro e não sabemos o que aconteceu';
 
 const longestWord = (phrase) => {
@@ -235,7 +236,6 @@ const longestWord = (phrase) => {
 
 console.log(longestWord(phrase));
 
-// Bônus (opcional): Tente fazer o mesmo exercício utilizando o método array.sort().
 
 // EXERCÍCIO BÔNUS:
 // Crie duas funções JavaScript com as seguintes especificações:
