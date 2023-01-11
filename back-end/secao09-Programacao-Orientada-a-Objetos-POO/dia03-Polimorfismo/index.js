@@ -50,7 +50,7 @@ var historyWork3Result = new evaluationResult_1["default"](historyWork3, 12);
 raphael.addEvaluationResult(historyExam1Result);
 raphael.addEvaluationResult(historyExam2Result);
 raphael.addEvaluationResult(historyExam3Result);
-raphael.addEvaluationResult(historyExam4Result);
+// raphael.addEvaluationResult(historyExam4Result);
 // raphael.addEvaluationResult(historyExam5Result);
 raphael.addEvaluationResult(historyWork1Result);
 raphael.addEvaluationResult(historyWork2Result);

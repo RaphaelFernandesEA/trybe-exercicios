@@ -41,10 +41,10 @@ var Student = /** @class */ (function (_super) {
         var workCount = 0;
         this._evaluationsResults.map(function (test) {
             if (test.evaluation instanceof exam_1["default"]) {
-                return examCount += 1;
+                examCount += 1;
             }
             if (test.evaluation instanceof work_1["default"]) {
-                return workCount += 1;
+                workCount += 1;
             }
         });
         if (examCount > 4) {
@@ -52,7 +52,7 @@ var Student = /** @class */ (function (_super) {
         }
         ;
         if (workCount >= 2) {
-            throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
+            throw new Error('A pessoa estudante deve possuir apenas 2 notas de trabalhos');
         }
         ;
         // this._evaluationsResults = _evaluationsResults;

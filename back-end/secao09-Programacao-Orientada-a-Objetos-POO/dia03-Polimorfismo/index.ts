@@ -60,12 +60,12 @@ const historyWork3Result = new EvaluationResult(historyWork3, 12);
 raphael.addEvaluationResult(historyExam1Result);
 raphael.addEvaluationResult(historyExam2Result);
 raphael.addEvaluationResult(historyExam3Result);
-// raphael.addEvaluationResult(historyExam4Result);
+raphael.addEvaluationResult(historyExam4Result);
 // raphael.addEvaluationResult(historyExam5Result);
 
 raphael.addEvaluationResult(historyWork1Result);
 raphael.addEvaluationResult(historyWork2Result);
-raphael.addEvaluationResult(historyWork3Result);
+// raphael.addEvaluationResult(historyWork3Result);
 
 
 console.log(raphael);

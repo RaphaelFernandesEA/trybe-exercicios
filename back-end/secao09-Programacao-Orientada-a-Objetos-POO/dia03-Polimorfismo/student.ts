@@ -24,18 +24,18 @@ export default class Student extends Person implements Registration {
     let workCount = 0;
     this._evaluationsResults.map((test) => {
       if(test.evaluation instanceof Exam) {
-        return examCount += 1
+        examCount += 1
       }
       if(test.evaluation instanceof Work) {
-        return workCount += 1
+        workCount += 1
       }
     });
-    if (examCount >= 4) {
+    if (examCount > 4) {
       throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
     };
 
     if (workCount >= 2) {
-      throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
+      throw new Error('A pessoa estudante deve possuir apenas 2 notas de trabalhos')
     };
     // this._evaluationsResults = _evaluationsResults;
   };
