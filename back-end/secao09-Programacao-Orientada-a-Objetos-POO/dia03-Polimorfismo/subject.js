@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Subject = /** @class */ (function () {
     function Subject(name) {
         this._name = name;
@@ -20,5 +20,5 @@ var Subject = /** @class */ (function () {
     ;
     return Subject;
 }());
-exports.default = Subject;
+exports["default"] = Subject;
 ;

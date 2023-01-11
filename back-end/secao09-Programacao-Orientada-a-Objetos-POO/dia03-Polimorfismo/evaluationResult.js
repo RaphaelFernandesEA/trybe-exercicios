@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var EvaluationResult = /** @class */ (function () {
     function EvaluationResult(evaluation, score) {
         this._evaluation = evaluation;
@@ -40,5 +40,5 @@ var EvaluationResult = /** @class */ (function () {
     ;
     return EvaluationResult;
 }());
-exports.default = EvaluationResult;
+exports["default"] = EvaluationResult;
 ;

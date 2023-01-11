@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.EvaluationType = void 0;
 var EvaluationType;
 (function (EvaluationType) {
@@ -7,6 +7,7 @@ var EvaluationType;
     EvaluationType["HOMEWORK"] = "homework";
 })(EvaluationType = exports.EvaluationType || (exports.EvaluationType = {}));
 var Evaluation = /** @class */ (function () {
+    // private _type: EvaluationType;
     function Evaluation(score, teacher) {
         this._teacher = teacher;
         this._score = score;
@@ -38,4 +39,4 @@ var Evaluation = /** @class */ (function () {
     ;
     return Evaluation;
 }());
-exports.default = Evaluation;
+exports["default"] = Evaluation;

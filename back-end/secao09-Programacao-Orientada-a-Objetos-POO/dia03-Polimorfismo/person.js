@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Person = /** @class */ (function () {
     function Person(name, birthDate) {
         this._name = name;
@@ -41,5 +41,5 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
-exports.default = Person;
+exports["default"] = Person;
 ;

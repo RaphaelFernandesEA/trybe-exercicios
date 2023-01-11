@@ -30,7 +30,6 @@ export default abstract class Person {
 
     const currentDate = (((new Date().getTime()/1000)/3600)/24)/365;
     const birthdayDate = (((birthDate.getTime()/1000)/3600)/24)/365;
-
     if(currentDate - birthdayDate > 120) {
       throw new Error('Impossível você ser tão velho assim!!!')
     }
