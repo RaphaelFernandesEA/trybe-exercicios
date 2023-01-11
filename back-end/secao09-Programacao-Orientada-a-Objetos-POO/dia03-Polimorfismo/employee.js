@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var person_1 = require("./person");
 var Employee = /** @class */ (function (_super) {
     __extends(Employee, _super);
@@ -22,5 +22,5 @@ var Employee = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return Employee;
-}(person_1.default));
-exports.default = Employee;
+}(person_1["default"]));
+exports["default"] = Employee;

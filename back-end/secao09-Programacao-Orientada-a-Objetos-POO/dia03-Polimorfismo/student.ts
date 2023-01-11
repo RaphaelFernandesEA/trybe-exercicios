@@ -3,6 +3,7 @@ import { EvaluationType } from "./evaluation";
 import EvaluationResult from "./evaluationResult";
 import Exam from "./exam";
 import Person from "./person";
+import Work from "./work";
 
 export default class Student extends Person implements Registration {
   public registration: string;
@@ -11,25 +12,32 @@ export default class Student extends Person implements Registration {
   constructor(name: string, birthDate: Date) {
       super(name, birthDate);
       this.validateRegistration();
-      this.valiadeteEvaluations(this._evaluationsResults)
+      // this.valiadeteEvaluations(this._evaluationsResults)
   };
 
   get evaluationsResults() {
     return this._evaluationsResults;
   };
 
-  valiadeteEvaluations(_evaluationsResults) {
-    const tests = this._evaluationsResults.filter((test) => test.evaluation === Exam);
-    // const homeworks = this._evaluationsResults.filter((homework) => homework.evaluation.type === EvaluationType.HOMEWORK)
-
-    if (tests.length >= 4) {
+  valiadeteEvaluations() {
+    let examCount = 0;
+    let workCount = 0;
+    this._evaluationsResults.map((test) => {
+      if(test.evaluation instanceof Exam) {
+        examCount += 1
+      }
+      if(test.evaluation instanceof Work) {
+        workCount += 1
+      }
+    });
+    if (examCount > 4) {
       throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
     };
 
-    // if (homeworks.length >= 2) {
-    //   throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
-    // };
-    this._evaluationsResults = _evaluationsResults;
+    if (workCount >= 2) {
+      throw new Error('A pessoa estudante deve possuir apenas 2 notas de trabalhos')
+    };
+    // this._evaluationsResults = _evaluationsResults;
   };
 
   generateRegistration(): string{
@@ -49,7 +57,7 @@ export default class Student extends Person implements Registration {
   };
 
   addEvaluationResult(evaluationResult:  EvaluationResult ) {
-    this.valiadeteEvaluations(this._evaluationsResults);
+    this.valiadeteEvaluations();
     this._evaluationsResults.push(evaluationResult);
   }
 

@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var evaluation_1 = require("./evaluation");
 var Exam = /** @class */ (function (_super) {
     __extends(Exam, _super);
@@ -35,5 +35,5 @@ var Exam = /** @class */ (function (_super) {
         _super.prototype.score === score;
     };
     return Exam;
-}(evaluation_1.default));
-exports.default = Exam;
+}(evaluation_1["default"]));
+exports["default"] = Exam;

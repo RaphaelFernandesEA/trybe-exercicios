@@ -5,6 +5,7 @@ import Person from "./person";
 import Student from "./student";
 import Subject from "./subject";
 import Teacher from "./teacher";
+import Work from "./work";
 
 const raphael = new Student('Raphael', new Date(1990, 1, 8))
 const joao = new Student('João', new Date(2000, 11, 8));
@@ -33,9 +34,42 @@ const frango = new Teacher('Professor Frango Borra Botas', new Date(1985, 7, 30)
 // console.log(frango)
 
 const historyExam1 = new Exam(10, maestri);
-console.log(historyExam1);
-console.log(historyExam1.score)
+const historyExam2 = new Exam(10, maestri);
+const historyExam3 = new Exam(10, maestri);
+const historyExam4 = new Exam(10, maestri);
+const historyExam5 = new Exam(10, maestri);
+// console.log(historyExam1);
+// console.log(historyExam1.score)
 // const historyExam2 = new Exam(-1, maestri);
+const historyWork1 = new Work(20, maestri);
+const historyWork2 = new Work(20, maestri);
+const historyWork3 = new Work(20, maestri);
+
 
 const historyExam1Result = new EvaluationResult(historyExam1, 9);
+const historyExam2Result = new EvaluationResult(historyExam2, 8);
+const historyExam3Result = new EvaluationResult(historyExam3, 10);
+const historyExam4Result = new EvaluationResult(historyExam4, 9);
+const historyExam5Result = new EvaluationResult(historyExam5, 6);
 // console.log(historyExam1Result);
+
+const historyWork1Result = new EvaluationResult(historyWork1, 20);
+const historyWork2Result = new EvaluationResult(historyWork2, 18);
+const historyWork3Result = new EvaluationResult(historyWork3, 12);
+
+raphael.addEvaluationResult(historyExam1Result);
+raphael.addEvaluationResult(historyExam2Result);
+raphael.addEvaluationResult(historyExam3Result);
+raphael.addEvaluationResult(historyExam4Result);
+// raphael.addEvaluationResult(historyExam5Result);
+
+raphael.addEvaluationResult(historyWork1Result);
+raphael.addEvaluationResult(historyWork2Result);
+// raphael.addEvaluationResult(historyWork3Result);
+
+
+console.log(raphael);
+const rEvaResul = raphael.evaluationsResults;
+// console.log(rEvaResul);
+
+

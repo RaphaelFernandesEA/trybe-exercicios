@@ -14,17 +14,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var exam_1 = require("./exam");
 var person_1 = require("./person");
+var work_1 = require("./work");
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
     function Student(name, birthDate) {
         var _this = _super.call(this, name, birthDate) || this;
         _this._evaluationsResults = [];
         _this.validateRegistration();
-        _this.valiadeteEvaluations(_this._evaluationsResults);
         return _this;
+        // this.valiadeteEvaluations(this._evaluationsResults)
     }
     ;
     Object.defineProperty(Student.prototype, "evaluationsResults", {
@@ -35,17 +36,26 @@ var Student = /** @class */ (function (_super) {
         configurable: true
     });
     ;
-    Student.prototype.valiadeteEvaluations = function (_evaluationsResults) {
-        var tests = this._evaluationsResults.filter(function (test) { return test.evaluation === exam_1.default; });
-        // const homeworks = this._evaluationsResults.filter((homework) => homework.evaluation.type === EvaluationType.HOMEWORK)
-        if (tests.length >= 4) {
+    Student.prototype.valiadeteEvaluations = function () {
+        var examCount = 0;
+        var workCount = 0;
+        this._evaluationsResults.map(function (test) {
+            if (test.evaluation instanceof exam_1["default"]) {
+                examCount += 1;
+            }
+            if (test.evaluation instanceof work_1["default"]) {
+                workCount += 1;
+            }
+        });
+        if (examCount > 4) {
             throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas');
         }
         ;
-        // if (homeworks.length >= 2) {
-        //   throw new Error('A pessoa estudante deve possuir apenas 4 notas de provas')
-        // };
-        this._evaluationsResults = _evaluationsResults;
+        if (workCount >= 2) {
+            throw new Error('A pessoa estudante deve possuir apenas 2 notas de trabalhos');
+        }
+        ;
+        // this._evaluationsResults = _evaluationsResults;
     };
     ;
     Student.prototype.generateRegistration = function () {
@@ -63,10 +73,10 @@ var Student = /** @class */ (function (_super) {
     };
     ;
     Student.prototype.addEvaluationResult = function (evaluationResult) {
-        this.valiadeteEvaluations(this._evaluationsResults);
+        this.valiadeteEvaluations();
         this._evaluationsResults.push(evaluationResult);
     };
     return Student;
-}(person_1.default));
-exports.default = Student;
+}(person_1["default"]));
+exports["default"] = Student;
 ;
