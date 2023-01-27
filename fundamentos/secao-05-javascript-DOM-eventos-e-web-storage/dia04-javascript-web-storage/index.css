@@ -1,0 +1,14 @@
+body {
+  display: inline;
+  align-items:center;
+}
+
+ul {
+  display: inline-block;
+  text-align: center;
+}
+
+button {
+  width: 130px ;
+}
+
