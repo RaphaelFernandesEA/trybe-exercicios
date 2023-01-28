@@ -1,0 +1,24 @@
+#elemento-pai {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  text-align: center; /* centraliza os elementos li dentro de cada ul */
+  display: block;
+}
+/* ul {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* para centralizar os elementos filhos na horizontal */
+/* } */ */
+
+button {
+  width: 130px ;
+}
+
