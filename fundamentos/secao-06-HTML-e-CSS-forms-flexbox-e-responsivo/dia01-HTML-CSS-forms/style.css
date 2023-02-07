@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: 50%;
+  background-color: gainsboro;
+  padding: 15px;
+  border: 3px solid black;
+}
+
+#nome {
+  margin-bottom: 10px;
+}
+
+#email {
+  margin-bottom: 10px;
+}
+
+#date {
+  resize: none;
+  margin: 10px 0;
+}
+
+#buttons {
+  margin: 10px auto;
+  width: 50%;
+
+}
+
+#enviar {
+  margin-right: 5px;
+  padding: 8px 40px;
+  border-radius: 8px
+  
+}
+
+#limpar {
+  margin-right: 5px;
+  padding: 8px 40px;
+  border-radius: 8px;
+}
