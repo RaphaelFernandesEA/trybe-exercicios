@@ -28,6 +28,13 @@ p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 #techContainer {
   width: 500px;
   display: flex;
@@ -38,8 +45,13 @@ p {
   background-color: rgba(190, 194, 192, 0.548);
   border-radius: 15px;
   margin: 5px;
+  box-shadow: 3px 3px 3px gray
 }
 
 .logos {
   width: 150px;
+}
+
+.techNames {
+  text-transform: uppercase
 }

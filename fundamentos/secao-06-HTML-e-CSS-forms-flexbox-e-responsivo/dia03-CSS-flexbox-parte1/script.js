@@ -1,6 +1,8 @@
 const techsContainer = document.createElement("div");
 techsContainer.id = "techContainer";
-document.body.appendChild(techsContainer)
+const content = document.querySelector("#content")
+
+content.appendChild(techsContainer)
 const logosPaths = ["images/html-logo.png", "images/css-logo.png", "images/javaScript-logo.png", "images/react-logo.png", "images/rtl-logo.png", "images/redux-logo.png"]
 
 const techNames = ["html", "css", "javaScript", "react", "rtl", "redux"]
