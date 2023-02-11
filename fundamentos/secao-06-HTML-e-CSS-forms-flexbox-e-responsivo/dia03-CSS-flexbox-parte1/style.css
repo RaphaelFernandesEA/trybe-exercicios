@@ -1,0 +1,77 @@
+header {
+  margin: 0;
+  background-color: rgb(57, 54, 54);
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+}
+
+button {
+  color: rgba(240, 248, 255, 0.772);
+  text-decoration: underline;
+  background-color: rgb(57, 54, 54);
+  border: none;
+}
+
+p {
+  text-align: center;
+  font-weight: 500;
+}
+
+#trybe-logo {
+  height: 60px;
+}
+
+#title {
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#techContainer {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#trace {
+  background-color: rgba(229, 232, 230, 0.914);
+  width: 150px;
+  height: 1px;
+  box-shadow: 0px 3px 2px rgb(200, 198, 198);
+  margin-top: 25px;
+}
+
+#socialMediaContainer {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.techCard {
+  background-color: rgba(229, 232, 230, 0.914);
+  border-radius: 15px;
+  margin: 5px;
+  box-shadow: 2px 3px 2px rgba(200, 198, 198, 0.191);
+  padding: 3px
+}
+
+.logos {
+  width: 150px;
+}
+
+.techNames {
+  text-transform: uppercase
+}
+
+.social-medias {
+  height: 40px;
+  padding: 5px;
+}
