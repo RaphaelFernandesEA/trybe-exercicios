@@ -28,3 +28,21 @@ const createTechCards = () => {
 }
 
 createTechCards();
+
+const trace = document.createElement("div");
+trace.id = "trace";
+content.appendChild(trace);
+
+const socialMediaContainer = document.createElement("div");
+socialMediaContainer.id = "socialMediaContainer"
+content.appendChild(socialMediaContainer);
+
+const instagram = document.createElement("img");
+instagram.src = "images/instagram-logo.png";
+instagram.className = "social-medias"
+socialMediaContainer.appendChild(instagram);
+
+const linkedIn = document.createElement("img");
+linkedIn.src = "images/linked-in-logo.png";
+linkedIn.className = "social-medias"
+socialMediaContainer.appendChild(linkedIn);

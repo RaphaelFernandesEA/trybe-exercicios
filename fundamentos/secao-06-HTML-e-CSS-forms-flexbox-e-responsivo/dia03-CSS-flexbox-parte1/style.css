@@ -41,11 +41,26 @@ p {
   flex-wrap: wrap;
 }
 
+#trace {
+  background-color: rgba(229, 232, 230, 0.914);
+  width: 150px;
+  height: 1px;
+  box-shadow: 0px 3px 2px rgb(200, 198, 198);
+  margin-top: 25px;
+}
+
+#socialMediaContainer {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .techCard {
-  background-color: rgba(190, 194, 192, 0.548);
+  background-color: rgba(229, 232, 230, 0.914);
   border-radius: 15px;
   margin: 5px;
-  box-shadow: 2px 3px 2px rgb(200, 198, 198)
+  box-shadow: 2px 3px 2px rgba(200, 198, 198, 0.191);
+  padding: 3px
 }
 
 .logos {
@@ -54,4 +69,9 @@ p {
 
 .techNames {
   text-transform: uppercase
+}
+
+.social-medias {
+  height: 40px;
+  padding: 5px;
 }
