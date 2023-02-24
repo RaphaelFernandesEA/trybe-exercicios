@@ -1,0 +1,2 @@
+
+print(categories_counter)
