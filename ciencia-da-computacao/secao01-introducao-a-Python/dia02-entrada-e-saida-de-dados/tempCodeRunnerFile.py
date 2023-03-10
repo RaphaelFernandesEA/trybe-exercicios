@@ -1,2 +1,0 @@
-
-print(categories_counter)
